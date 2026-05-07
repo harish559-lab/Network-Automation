@@ -1,0 +1,6 @@
+networkvenv/
+__pycache__/
+*.pyc
+.pyats/
+*.log
+archive/

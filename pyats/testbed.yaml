@@ -1,0 +1,13 @@
+devices:
+  hfcl_switch:
+    os: linux
+    type: switch
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.180.159
+
+    credentials:
+      default:
+        username: admin
+        password: admin

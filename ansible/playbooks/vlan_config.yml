@@ -1,0 +1,7 @@
+- name: Configure VLAN using Netmiko
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Run Netmiko script
+      ansible.builtin.command: python3 /home/harish/Documents/Network-Automation/scripts/vlan_config.py
