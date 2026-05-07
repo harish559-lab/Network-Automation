@@ -1,34 +1,44 @@
 pipeline {
-    agent any
+agent any
 
-    stages {
+```
+stages {
 
-        stage('Activate Virtualenv') {
-            steps {
-                sh '''
-                . networkvenv/bin/activate
-                pip list
-                '''
-            }
+    stage('Clone Repository') {
+        steps {
+            git 'https://github.com/harish559-lab/Network-Automation.git'
         }
-
-        stage('Configure VLAN') {
-            steps {
-                sh '''
-                . networkvenv/bin/activate
-                ansible-playbook -i ansible/inventory/hosts.ini ansible/playbooks/vlan_config.yml
-                '''
-            }
-        }
-
-        stage('Validate VLAN') {
-            steps {
-                sh '''
-                . networkvenv/bin/activate
-                pyats run job pyats/jobs/vlan_job.py
-                '''
-            }
-        }
-
     }
+
+    stage('Create Virtual Environment') {
+        steps {
+            sh '''
+            python3 -m venv networkvenv
+            . networkvenv/bin/activate
+            pip install --upgrade pip
+            pip install -r requirements.txt
+            '''
+        }
+    }
+
+    stage('Configure VLAN') {
+        steps {
+            sh '''
+            . networkvenv/bin/activate
+            ansible-playbook -i ansible/inventory/hosts.ini ansible/playbooks/vlan_config.yml
+            '''
+        }
+    }
+
+    stage('Validate VLAN') {
+        steps {
+            sh '''
+            . networkvenv/bin/activate
+            pyats run job pyats/jobs/vlan_job.py
+            '''
+        }
+    }
+}
+```
+
 }
