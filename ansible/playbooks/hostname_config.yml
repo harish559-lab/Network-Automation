@@ -1,0 +1,9 @@
+---
+- name: Configure Hostname using Netmiko
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Run hostname Netmiko script
+      command: python3 {{ playbook_dir }}/../../scripts/hostname_config.py
