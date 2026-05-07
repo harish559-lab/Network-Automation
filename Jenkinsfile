@@ -6,7 +6,8 @@ stages {
 
     stage('Clone Repository') {
         steps {
-            git 'https://github.com/harish559-lab/Network-Automation.git'
+            git branch: 'main',
+            url:'https://github.com/harish559-lab/Network-Automation.git'
         }
     }
 
