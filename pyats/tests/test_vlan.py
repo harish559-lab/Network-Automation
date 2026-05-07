@@ -8,7 +8,7 @@ class VLANTest(aetest.Testcase):
 
         device = {
             "device_type": "linux",
-            "host": "192.168.180.159",
+            "host": "192.168.180.131",
             "username": "admin",
             "password": "admin",
         }
