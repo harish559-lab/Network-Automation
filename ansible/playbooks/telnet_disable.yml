@@ -1,0 +1,8 @@
+---
+- name: Disable Telnet
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Run Telnet Disable Script
+      command: python3 ../../scripts/telnet_disable.py

@@ -3,7 +3,7 @@ import time
 
 switch = {
     "device_type": "terminal_server",
-    "host": "192.168.180.131",
+    "host": "192.168.180.178",
     "username": "admin",
     "password": "admin",
 }

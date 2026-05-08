@@ -5,7 +5,7 @@ devices:
     connections:
       cli:
         protocol: ssh
-        ip: 192.168.180.131
+        ip: 192.168.180.178
 
     credentials:
       default:

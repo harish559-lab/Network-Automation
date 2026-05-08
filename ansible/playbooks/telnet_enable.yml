@@ -1,0 +1,8 @@
+---
+- name: Enable Telnet
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Run Telnet Enable Script
+      command: python3 ../../scripts/telnet_enable.py
