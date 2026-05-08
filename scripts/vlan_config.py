@@ -3,7 +3,7 @@ import time
 
 device = {
     "device_type": "generic_termserver",
-    "host": "192.168.180.159",
+    "host": "192.168.180.131",
     "username": "admin",
     "password": "admin",
 }
